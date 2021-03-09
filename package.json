@@ -1,6 +1,7 @@
 {
   "name": "monorepo-app-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": "Pradeep Kumar <pradeepk.pdp@gmail.com>",
   "license": "MIT",
   "scripts": {
     "nx": "nx",
