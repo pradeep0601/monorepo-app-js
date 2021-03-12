@@ -1,18 +1,22 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import 'reflect-metadata';
+import { createExpressServer, RoutingControllersOptions } from "routing-controllers"
 
-import * as express from 'express';
+import { UserController } from "./server/controllers/UserController";
+import {PingController} from './server/controllers/PingController';
 
-const app = express();
+const routingControllersOptions: RoutingControllersOptions = {
+  routePrefix: "/api/v1",
+  controllers: [
+    PingController,
+    UserController
+  ],
+  middlewares: []
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
-});
+};
 
+const server = createExpressServer(routingControllersOptions);
 const port = process.env.port || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+
+server.listen(port, () => {
+  console.log(`🚀 Listening at http://localhost:${port}${routingControllersOptions.routePrefix}`);
 });
-server.on('error', console.error);

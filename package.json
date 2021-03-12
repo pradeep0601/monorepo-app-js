@@ -28,8 +28,14 @@
   },
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
     "express": "4.17.1",
-    "tslib": "^2.0.0"
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0",
+    "tslib": "^2.0.0",
+    "typedi": "^0.10.0"
   },
   "devDependencies": {
     "@nrwl/cli": "11.4.0",
